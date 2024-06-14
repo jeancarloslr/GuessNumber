@@ -10,10 +10,8 @@ recognition.addEventListener('result', Speak)
 
 function Speak(e){
   chute = e.results[0] [0].transcript;
-  MostrarChute(chute)
-
+  verificarChuteValido(chute)
 }
-
 
 function MostrarChute(chute){
   ElementoChute.innerHTML = 
