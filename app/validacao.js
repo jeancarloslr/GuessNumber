@@ -1,21 +1,24 @@
+var mensagem = document.querySelector('#chute');
+
 function verificarChuteValido(chute){
     const numero = +chute  /*so de tentar somar ele vai converter a variavel pra inteiro*/
 
-    if(!Number.isNaN(numero) && NumeroMaiorMenor){
-        MostrarChute(chute)
-    }else{
-        ElementoChute.innerHTML = `Diga um número válido cara, po`
+    if(chuteForInvalido(numero)){
+        mensagem.innerHTML = `<p>Diga um valor válido(números)</p>`
     }
 
-    function NumeroMaiorMenor(){
-        if(chute > 100 || chute < 1){
-            return true;
-        }else{
-            return false;
-        }
+    if(maiorOuMenor(chute)){
+        mensagem.innerHTML = `<p>Diga um valor entre ${menorValor} e ${maiorValor}</p>`;
     }
 
+    function chuteForInvalido(numero){
+        return Number.isNaN(numero);
+    }
 
-    
+    function maiorOuMenor(valor){
+        return valor > maiorValor || valor < menorValor;
+    }
 }
+
+
 
