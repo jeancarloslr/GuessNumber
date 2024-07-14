@@ -1,6 +1,6 @@
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-vareroFalado = document.querySelector('.box');
 var ElementoChute = document.querySelector('#chute');
+var chute;
 
 const recognition = new SpeechRecognition();
 recognition.lang = "pt-Br";
@@ -9,7 +9,8 @@ recognition.start();
 recognition.addEventListener('result', Speak)
 
 function Speak(e){
-  chute = e.results[0] [0].transcript;
+  chute = e.results[0][0].transcript;
+  console.log(chute)
   verificarChuteValido(chute)
 }
 

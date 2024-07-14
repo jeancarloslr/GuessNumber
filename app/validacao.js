@@ -7,9 +7,11 @@ function verificarChuteValido(chute){
         mensagem.innerHTML = `<p>Diga um valor válido(números)</p>`
     }
 
-    if(maiorOuMenor(chute)){
+    if(maiorOuMenor(numero)){
         mensagem.innerHTML = `<p>Diga um valor entre ${menorValor} e ${maiorValor}</p>`;
     }
+
+}
 
     function chuteForInvalido(numero){
         return Number.isNaN(numero);
@@ -18,7 +20,7 @@ function verificarChuteValido(chute){
     function maiorOuMenor(valor){
         return valor > maiorValor || valor < menorValor;
     }
-}
+
 
 
 
